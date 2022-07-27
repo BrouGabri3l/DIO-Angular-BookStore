@@ -1,0 +1,11 @@
+<section>
+  <div class="card p-3">
+    <label for="categoryFilter">Categoria: </label>
+    <select [(ngModel)]="selectedValue" name="category" id="categoryFilter" class="form-select"
+      (ngModelChange)="filterRequest($event)">
+      <option [ngValue]=""></option>
+
+      <option [ngValue]="category.value" *ngFor="let category of bookCategories |keyvalue">{{category.value}}</option>
+    </select>
+  </div>
+</section>
